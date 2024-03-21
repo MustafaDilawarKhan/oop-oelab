@@ -25,8 +25,13 @@ public:
     Teacher* teacher;
     vector<Student*> studentsEnrolled;
     int maxCapacity = 50;
+    void assignCourse(Course* course);
 };
 
+void Teacher::assignCourse(Course* course) {
+    course->teacher = this;
+    coursesTeaching.push_back(course);
+}
 
 
 int main() {
