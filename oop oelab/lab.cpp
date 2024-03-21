@@ -11,7 +11,12 @@ public:
     string email;
 };
 
-
+class Teacher {
+public:
+    string teacherID;
+    string name;
+    string email;
+};
 
 
 int main() {
