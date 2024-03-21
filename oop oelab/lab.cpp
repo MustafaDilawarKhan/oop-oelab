@@ -16,15 +16,6 @@ public:
     string teacherID;
     string name;
     string email;
-};
-
-class Course {
-public:
-    string courseCode;
-    string courseName;
-    Teacher* teacher;
-    vector<Student*> studentsEnrolled;
-    int maxCapacity = 50;
     void assignCourse(Course* course);
     void removeCourse(Course* course);
 };
@@ -38,6 +29,15 @@ void Teacher::removeCourse(Course* course) {
     course->teacher = nullptr;
     coursesTeaching.erase(remove(coursesTeaching.begin(), coursesTeaching.end(), course), coursesTeaching.end());
 }
+
+class Course {
+public:
+    string courseCode;
+    string courseName;
+    Teacher* teacher;
+    vector<Student*> studentsEnrolled;
+    int maxCapacity = 50;
+};
 
 int main() {
 
