@@ -79,7 +79,7 @@ public:
     vector<Student*> studentsEnrolled;
     int maxCapacity = 50;
     void addStudent(Student* student);
-
+    void removeStudent(Student* student);
 };
 
 void Course::addStudent(Student* student) {
@@ -91,6 +91,10 @@ void Course::addStudent(Student* student) {
     }
 }
 
+void Course::removeStudent(Student* student) {
+    studentsEnrolled.erase(remove(studentsEnrolled.begin(), studentsEnrolled.end(), student), studentsEnrolled.end());
+    cout << "Student " << student->name << " removed from course " << courseName << endl;
+}
 
 
 int main() {
