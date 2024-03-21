@@ -17,7 +17,7 @@ public:
     string name;
     string email;
     void assignCourse(Course* course);
-    void removeCourse(Course* course);
+    void viewCourses();
 };
 
 void Teacher::assignCourse(Course* course) {
@@ -29,6 +29,14 @@ void Teacher::removeCourse(Course* course) {
     course->teacher = nullptr;
     coursesTeaching.erase(remove(coursesTeaching.begin(), coursesTeaching.end(), course), coursesTeaching.end());
 }
+
+void Teacher::viewCourses() {
+    for (Course* course : coursesTeaching) {
+        cout << course->courseCode << " " << course->courseName << endl;
+    }
+}
+
+
 
 class Course {
 public:
