@@ -2,13 +2,17 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include<fstream>
 using namespace std;
+
+class Course;
 
 class Student {
 public:
     string studentID;
     string name;
     string email;
+     vector<string> coursesEnrolled;     // Track enrolled courses
     void enrollCourse(Course* course);
      void dropCourse(Course* course);
     void viewCourses();
