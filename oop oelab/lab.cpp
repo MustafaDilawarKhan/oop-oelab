@@ -25,7 +25,7 @@ void Student::enrollCourse(Course* course) {
 }
 //opt out of course
 void Student::dropCourse(Course* course) {
-    auto it = std::find(coursesEnrolled.begin(), coursesEnrolled.end(), course);
+    auto it = find(coursesEnrolled.begin(), coursesEnrolled.end(), course);
     if (it != coursesEnrolled.end()) {
         course->removeStudent(this);
         coursesEnrolled.erase(it);
@@ -80,6 +80,7 @@ public:
     int maxCapacity = 50;
     void addStudent(Student* student);
     void removeStudent(Student* student);
+void viewStudents();
 };
 
 void Course::addStudent(Student* student) {
@@ -96,6 +97,12 @@ void Course::removeStudent(Student* student) {
     cout << "Student " << student->name << " removed from course " << courseName << endl;
 }
 
+void Course::viewStudents() {
+    cout << "Students enrolled in course " << courseName << ":" << endl;
+    for (Student* student : studentsEnrolled) {
+        cout << "ID: " << student->studentID << ", Name: " << student->name << endl;
+    }
+}
 
 int main() {
 
