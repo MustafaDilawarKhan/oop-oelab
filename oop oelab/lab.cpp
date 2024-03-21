@@ -12,11 +12,14 @@ public:
     string studentID;
     string name;
     string email;
-     vector<string> coursesEnrolled;     // Track enrolled courses
+    vector<string> coursesEnrolled;     // Track enrolled courses
     void enrollCourse(Course* course);
-     void dropCourse(Course* course);
+    void dropCourse(Course* course);
     void viewCourses();
+    void readFromFile(ifstream &infile);
+    void writeToFile(ofstream &outfile); 
 };
+
 //enrollment
 void Student::enrollCourse(Course* course) {
     if (find(coursesEnrolled.begin(), coursesEnrolled.end(), course) != coursesEnrolled.end()) {
@@ -54,6 +57,7 @@ public:
     string name;
     string email;
     void assignCourse(Course* course);
+    vector<string> coursesTeaching; // Track assigned courses
     void viewCourses();
 };
 
