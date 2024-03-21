@@ -78,7 +78,20 @@ public:
     Teacher* teacher;
     vector<Student*> studentsEnrolled;
     int maxCapacity = 50;
+    void addStudent(Student* student);
+
 };
+
+void Course::addStudent(Student* student) {
+    if (studentsEnrolled.size() < maxCapacity) {
+        studentsEnrolled.push_back(student);
+        cout << "Student " << student->name << " added to course " << courseName <<endl;
+    } else {
+        cout << "Course " << courseName << " is full." << endl;
+    }
+}
+
+
 
 int main() {
 
