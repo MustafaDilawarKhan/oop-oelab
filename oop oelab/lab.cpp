@@ -18,6 +18,16 @@ public:
     string email;
 };
 
+class Course {
+public:
+    string courseCode;
+    string courseName;
+    Teacher* teacher;
+    vector<Student*> studentsEnrolled;
+    int maxCapacity = 50;
+};
+
+
 
 int main() {
 
